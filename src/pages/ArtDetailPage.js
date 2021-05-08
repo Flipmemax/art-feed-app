@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "../components/Style/Styling.css";
 
 export default function ArtDetailPage() {
@@ -27,11 +27,13 @@ export default function ArtDetailPage() {
       {artData ? (
         <div>
           <h1>{artData.longTitle}</h1>
-          <img
-            src={artData.webImage.url}
-            alt={artData.longTitle}
-            className="ArtCardIMG"
-          />
+          <Link to={`/fullscreen/${objectNumber}`}>
+            <img
+              src={artData.webImage.url}
+              alt={artData.longTitle}
+              className="ArtCardIMG"
+            />
+          </Link>
 
           <h2>Plaque description:</h2>
           <p
