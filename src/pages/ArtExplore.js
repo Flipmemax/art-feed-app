@@ -1,36 +1,24 @@
-import { Link, useParams, useHistory } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ArtCard from "../components/ArtCard";
 import "../components/Style/Styling.css";
 
 export default function ArtFeed() {
-  const [state, setState] = useState({ status: "idle" });
-  const history = useHistory();
   const { searching } = useParams();
+  const [state, setState] = useState([]);
   const [searchArt, setSearchArt] = useState(searching);
+  const history = useHistory();
 
   useEffect(() => {
     async function fetchData() {
-      if (!searching || searching === "") {
-        setState({ status: "idle" });
-        return;
-      }
-
       try {
-        setState({ status: "searching" });
-        const queryParam = encodeURIComponent(searching);
-
+        const queryParams = encodeURIComponent(searching);
         const response = await axios.get(
-          `https://www.rijksmuseum.nl/api/en/collection?key=KakAy1eR&involvedMaker=${queryParam}`
+          `https://www.rijksmuseum.nl/api/en/collection?key=KakAy1eR&involvedMaker=${queryParams}&p=1&ps=10000`
         );
 
-        if (response.data.artObjects.Error) {
-          setState({ status: "error" });
-        } else {
-          setState({ status: "done", data: response.data.artObjects });
-          setSearchArt("");
-        }
+        setState(response.data.artObjects);
       } catch (error) {
         console.log("error searching", error.message);
       }
@@ -42,7 +30,7 @@ export default function ArtFeed() {
   const navigateToSearch = (event) => {
     event.preventDefault();
     const routeParam = encodeURIComponent(searchArt);
-    history.push(`/art/${routeParam}`);
+    history.push(`/explore/${routeParam}`);
   };
 
   return (
@@ -75,17 +63,11 @@ export default function ArtFeed() {
             </button>
           </form>
         </div>
-        {state.status === "error" && <p>Sorry, no art found... Try again!</p>}
-        {state.status === "searching" && <p>Loading....</p>}
-        {state.status === "done" && (
-          <div>
-            {state.data.map((art) => (
-              <div key={art.id}>
-                <ArtCard art={art} />
-              </div>
-            ))}
+        {state.map((art) => (
+          <div key={art.id}>
+            <ArtCard art={art} />
           </div>
-        )}
+        ))}
       </div>
     </div>
   );

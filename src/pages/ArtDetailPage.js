@@ -16,7 +16,7 @@ export default function ArtDetailPage() {
         setArtData(response.data.artObject);
         console.log(response.data);
       } catch (error) {
-        console.log(error);
+        console.log(error.message);
       }
     }
     fetchData();
