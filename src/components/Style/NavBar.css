@@ -1,0 +1,23 @@
+.NavStyle {
+  margin-top: 0;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  height: 7vh;
+  background-color: rgb(146, 86, 86);
+}
+
+.InnerNav {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  font-size: 25px;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.NavText {
+  margin-left: 50px;
+  text-decoration: none;
+  color: white;
+}

@@ -1,0 +1,45 @@
+.DivBORDER {
+  max-height: 100vh;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.InnerDivBorder {
+  max-width: 50vw;
+  background-color: rgb(160, 158, 158);
+  color: white;
+  margin-bottom: 20px;
+}
+
+.ArtCardIMG {
+  max-width: 50vw;
+}
+
+.ArtpageBtnRightFlex {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.ArtPageBtn {
+  background-color: rgb(146, 86, 86);
+  /* background: transparent; */
+  border: none;
+  cursor: pointer;
+  /* width: 15vw; */
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.inputField {
+  width: 25vw;
+  margin-bottom: 20px;
+  font-size: 20px;
+  border: none;
+  background: rgb(187, 137, 137);
+  color: white;
+}
