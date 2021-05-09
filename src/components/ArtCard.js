@@ -5,9 +5,8 @@ export default function ArtCard({ art }) {
   return (
     <div className="DivBORDER">
       <div className="InnerDivBorder">
-        <h3>
-          Title:<br></br>
-          {art.longTitle}
+        <h3 style={{ paddingLeft: "20px", paddingRight: "20px" }}>
+          {art.title}
         </h3>
         <p>
           <strong> Artist:</strong>

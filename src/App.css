@@ -6,3 +6,7 @@
   background-color: gray;
   color: white;
 }
+
+.FullSize {
+  min-height: 100vh;
+}

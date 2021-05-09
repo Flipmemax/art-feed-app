@@ -10,15 +10,18 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <div className="App">
-      <NavBar style={{ marginTop: "50px" }} />
-
-      <Switch>
-        <Route path="/fullscreen/:objectNumber" component={FullScreenDisplay} />
-        <Route path="/art/:objectNumber" component={ArtDetailPage} />
-        <Route path="/explore/:searching?" component={ArtExplore} />
-        <Route path="/" component={HomePage} />
-      </Switch>
-
+      <NavBar />
+      <div className="FullSize">
+        <Switch>
+          <Route
+            path="/fullscreen/:objectNumber"
+            component={FullScreenDisplay}
+          />
+          <Route path="/art/:objectNumber" component={ArtDetailPage} />
+          <Route path="/explore/:searching?" component={ArtExplore} />
+          <Route path="/" component={HomePage} />
+        </Switch>
+      </div>
       <Footer />
     </div>
   );
