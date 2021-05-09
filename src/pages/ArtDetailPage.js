@@ -11,7 +11,7 @@ export default function ArtDetailPage() {
     async function fetchData() {
       try {
         const response = await axios.get(
-          `https://www.rijksmuseum.nl/api/nl/collection/${objectNumber}?key=KakAy1eR`
+          `https://www.rijksmuseum.nl/api/en/collection/${objectNumber}?key=KakAy1eR`
         );
         setArtData(response.data.artObject);
         console.log(response.data);
@@ -34,7 +34,6 @@ export default function ArtDetailPage() {
               className="ArtCardIMG"
             />
           </Link>
-
           <h2>Plaque description:</h2>
           <p
             style={{
@@ -48,11 +47,31 @@ export default function ArtDetailPage() {
           <p
             style={{
               fontSize: "20px",
+            }}
+          >
+            <strong>Materials:</strong>
+
+            <ul
+              style={{
+                listStyle: "none",
+                paddingLeft: "60px",
+                paddingRight: "60px",
+              }}
+            >
+              {artData.materials.map((materials) => (
+                <li>{materials}</li>
+              ))}
+            </ul>
+          </p>
+          <p
+            style={{
+              fontSize: "20px",
               paddingLeft: "60px",
               paddingRight: "60px",
             }}
           >
             <strong>Artist:</strong>
+            <br></br>
             <br></br>
             {artData.principalOrFirstMaker}
           </p>
@@ -63,7 +82,20 @@ export default function ArtDetailPage() {
               paddingRight: "60px",
             }}
           >
+            <strong> Biography:</strong>
+            <br></br>
+            <br></br>
+            {artData.principalMakers[0].biography}
+          </p>
+          <p
+            style={{
+              fontSize: "20px",
+              paddingLeft: "60px",
+              paddingRight: "60px",
+            }}
+          >
             <strong>Nationality:</strong>
+            <br></br>
             <br></br>
             {artData.principalMakers[0].nationality}
           </p>
@@ -76,6 +108,7 @@ export default function ArtDetailPage() {
           >
             <strong>Place of Birth:</strong>
             <br></br>
+            <br></br>
             {artData.principalMakers[0].placeOfBirth}
           </p>
           <p
@@ -86,6 +119,7 @@ export default function ArtDetailPage() {
             }}
           >
             <strong>Date of Birth:</strong>
+            <br></br>
             <br></br>
             {artData.principalMakers[0].dateOfBirth}
           </p>
@@ -98,18 +132,8 @@ export default function ArtDetailPage() {
           >
             <strong>Date of Death:</strong>
             <br></br>
-            {artData.principalMakers[0].dateOfDeath}
-          </p>
-          <p
-            style={{
-              fontSize: "20px",
-              paddingLeft: "60px",
-              paddingRight: "60px",
-            }}
-          >
-            <strong> Biography:</strong>
             <br></br>
-            {artData.principalMakers[0].biography}
+            {artData.principalMakers[0].dateOfDeath}
           </p>
         </div>
       ) : (
