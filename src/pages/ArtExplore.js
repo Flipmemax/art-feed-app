@@ -53,6 +53,7 @@ export default function ArtFeed() {
         >
           Please type in the artist's full name to search, oh and it's case
           sensitive!<br></br>
+          <br></br>
           Example: Rembrandt van Rijn
         </p>
         <div>
