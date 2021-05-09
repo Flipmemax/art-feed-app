@@ -33,7 +33,6 @@ export default function ArtFeed() {
     history.push(`/explore/${routeParam}`);
   };
 
-  console.log(searchArt);
   console.log(state);
 
   return (
@@ -45,7 +44,13 @@ export default function ArtFeed() {
           </Link>
         </div>
         <h1>Explore some art!</h1>
-        <p style={{ fontSize: "20px" }}>
+        <p
+          style={{
+            fontSize: "20px",
+            paddingLeft: "50px",
+            paddingRight: "50px",
+          }}
+        >
           Please type in the artist's full name to search, oh and it's case
           sensitive!<br></br>
           Example: Rembrandt van Rijn
@@ -66,33 +71,13 @@ export default function ArtFeed() {
             </button>
           </form>
         </div>
-        {state.length === 0 ? (
-          <div>
-            <p
-              style={{
-                fontSize: "20px",
-                paddingLeft: "50px",
-                paddingRight: "50px",
-              }}
-            >
-              Ooops... I couldn't find any art from the artist you gave me.. Are
-              you sure he/she existst? Did you make a typo by any chance? Don't
-              forget the search is case sensitive! For example, if you are
-              looking for Vincent van Gogh, you should not type vincent van
-              gogh, or VINCENT VAN GOGH! <br></br>
-              <br></br>Your input:{" "}
-              <strong style={{ color: "darkred" }}>{searchArt}</strong>
-            </p>{" "}
-          </div>
-        ) : (
-          <div>
-            {state.map((art) => (
-              <div key={art.id}>
-                <ArtCard art={art} />
-              </div>
-            ))}
-          </div>
-        )}
+        <div>
+          {state.map((art) => (
+            <div key={art.id}>
+              <ArtCard art={art} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
