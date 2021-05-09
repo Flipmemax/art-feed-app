@@ -43,13 +43,28 @@ export default function ArtFeed() {
         <button onClick={refreshButton} className="ArtPageBtn">
           Click here for random art!
         </button>
-        <div>
-          {state.map((art) => (
-            <div key={art.id}>
-              <ArtCard art={art} />
-            </div>
-          ))}
-        </div>
+        {state.length === 0 ? (
+          <div>
+            <p
+              style={{
+                fontSize: "20px",
+                paddingLeft: "50px",
+                paddingRight: "50px",
+              }}
+            >
+              Sorry, I couldn't steal any random art from The Rijksmuseum.. But
+              just click the button again, maybe I succeed this time!
+            </p>{" "}
+          </div>
+        ) : (
+          <div>
+            {state.map((art) => (
+              <div key={art.id}>
+                <ArtCard art={art} />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

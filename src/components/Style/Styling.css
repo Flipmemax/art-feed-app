@@ -19,8 +19,8 @@
 
 .ArtpageBtnRightFlex {
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
 }
 
 .ArtPageBtn {
@@ -42,4 +42,8 @@
   border: none;
   background: rgb(187, 137, 137);
   color: white;
+}
+
+.FullScreenIMG {
+  max-width: 99vw;
 }

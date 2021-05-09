@@ -10,8 +10,8 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <div className="App">
-      <NavBar />
       <div className="FullSize">
+        <NavBar />
         <Switch>
           <Route
             path="/fullscreen/:objectNumber"

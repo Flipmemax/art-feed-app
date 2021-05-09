@@ -113,7 +113,7 @@ export default function ArtDetailPage() {
           </p>
         </div>
       ) : (
-        <p> Loading....</p>
+        <h1> Loading....</h1>
       )}
     </div>
   );

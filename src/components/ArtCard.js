@@ -5,9 +5,19 @@ export default function ArtCard({ art }) {
   return (
     <div className="DivBORDER">
       <div className="InnerDivBorder">
-        <h3 style={{ paddingLeft: "20px", paddingRight: "20px" }}>
-          {art.title}
-        </h3>
+        <Link
+          to={`/art/${art.objectNumber}`}
+          style={{ textDecoration: "none", color: "white" }}
+        >
+          <h3
+            style={{
+              paddingLeft: "20px",
+              paddingRight: "20px",
+            }}
+          >
+            {art.title}
+          </h3>
+        </Link>
         <p>
           <strong> Artist:</strong>
         </p>

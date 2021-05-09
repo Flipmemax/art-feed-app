@@ -26,10 +26,14 @@ export default function FullScreenDisplay() {
     <div>
       {artData ? (
         <div>
-          <img src={artData.webImage.url} alt={artData.longTitle} />
+          <img
+            src={artData.webImage.url}
+            alt={artData.longTitle}
+            className="FullScreenIMG"
+          />
         </div>
       ) : (
-        <p> Loading....</p>
+        <h1> Loading....</h1>
       )}
     </div>
   );
