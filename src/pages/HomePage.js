@@ -32,14 +32,14 @@ export default function ArtFeed() {
   return (
     <div>
       <div>
-        <div className="ArtpageBtnRightFlex">
+        <h1>Welcome to Artzy</h1>
+        <div>
           <Link to="/explore">
             <button className="ArtPageBtn">
               Click here to explore some art
             </button>
           </Link>
         </div>
-        <h1>Welcome to Artzy</h1>
         <button onClick={refreshButton} className="ArtPageBtn">
           Click here for random art!
         </button>

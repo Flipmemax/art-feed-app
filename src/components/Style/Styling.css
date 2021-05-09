@@ -17,11 +17,11 @@
   max-width: 50vw;
 }
 
-.ArtpageBtnRightFlex {
+/* .ArtpageBtnRightFlex {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .ArtPageBtn {
   background-color: rgb(146, 86, 86);
@@ -33,6 +33,7 @@
   font-size: 20px;
   font-weight: bold;
   color: white;
+  margin-bottom: 20px;
 }
 
 .inputField {
